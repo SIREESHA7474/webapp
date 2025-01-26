@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block main %}
+   <form action="" method="post">
+    {% csrf_token %}
+   <p>do u really delete <b>{{employee.empname}}?</b></p>
+   <input type="submit" value="confirm">
+</form>
+{% endblock %}
+{% block test %}
+{% endblock %}
+

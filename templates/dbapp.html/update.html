@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block main %}
+<form action="" method="post">
+    {% csrf_token %}
+    <p>empno: {{employee.empno}}</p>
+    <label for="">
+        Employeee name
+        <input type="text" name="ename" value="{{employee.empname}}">
+    </label><br><br>
+    <label for="">
+        Employee salary
+        <input type="text" name="esal" value="{{employee.salary}}">
+    </label><br><br>
+    <input type="submit" value="update">
+</form>    
+{% endblock %}
+{% block test %}
+{% endblock %}

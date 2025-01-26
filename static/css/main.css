@@ -1,0 +1,14 @@
+*{
+    margin :0;
+    padding: 0;
+}
+.heading{
+    height:60px;
+    text-align: center;
+    background-color:rgb(69, 144, 174);
+    color: white;
+}
+.main{
+    text-align: center;
+    margin-top: 20px;
+}

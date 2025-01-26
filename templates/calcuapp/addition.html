@@ -1,0 +1,31 @@
+
+    {% extends 'base.html' %}
+    {% block main %}  
+        
+        <form action="" method="post" onsubmit="return validatedata()">
+            {% csrf_token %}
+            <label>value1
+                <input type="text" name="t1" id="t1">
+
+            </label><br><br>
+            <label> value2
+                <input type="text" name="t2" id="t2">
+            </label><br><br>
+            <input type="submit" value="addition" name="add">
+            <input type="submit" value="subs" name="sub">
+            <input type="submit" value="multi" name="multi">
+            <input type="submit" value="division" name="div">
+        </form>
+        {% if action == "addition" %}
+               <p style="color: greenyellow;">{{action}} {{result}}</p>
+        {% elif action == "sub" %}
+               <p style="color: pink;">{{action}} {{result}}</p>   
+        {% elif action == "multiplication" %} 
+               <p style="color: blue;">{{action}} {{result}}</p>
+        {% else %} 
+               <p style="color: orange;">{{action}} {{result}}</p>       
+        {% endif %}              
+          
+        
+    {% endblock %}    
+        

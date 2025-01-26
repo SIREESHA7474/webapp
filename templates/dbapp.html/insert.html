@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="">
+        Employee No
+    <input type="text" name="eno">
+    </label><br><br>
+    <label for="">
+        Employee Name
+        <input type="text" name="ename">
+    </label><br><br>
+    <label for="">
+        Employee salary
+        <input type="text" name="esal">
+    </label><br><br>
+   
+        <input type="submit" name="insert">
+</form>
+<p>{{msg}}</p>
+{% endblock %}
+{% block test %}
+{% endblock %}

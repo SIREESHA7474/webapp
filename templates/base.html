@@ -1,0 +1,28 @@
+{% load static %}
+
+<!doctype>
+<html>
+    <head>
+        <link rel="stylesheet" href="{%static 'css/main.css'%}">
+    </head>
+    <body>
+        <div class="heading">
+            <h1>vcube software solutions</h1>
+        </div>
+        <div class="main">
+            {% block main %}
+            
+
+            {% endblock %}
+            
+        </div>
+        <div>
+            {% block test %}
+
+            <h1> testing</h1>
+            {% endblock %}
+        </div>
+       <script src="{% static 'js/validate.js'%}"></script>
+
+    </body>
+</html>
