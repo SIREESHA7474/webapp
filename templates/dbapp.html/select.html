@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 {% block main %}
-   <h1><a href="{% url 'empinserturl' %}">ADD+</a></h1>
+<div>
+   <h1><a href="{% url 'empinserturl' %}"><button><h3>Insert Data</h3></button></a></h1></div>
     <table border="1px" cellspacing="0" >
-        <tr><th>Employee No</th><th>Employee Name</th><th>Salary</th><th>Action</th></tr>
+        <tr><th>Employee No</th><th>Employee Name</th><th>Salary</th><th>Department name</th><th>location</th><th>Action</th></tr>
     {% for emp in employee %}
-    <tr><td>{{emp.empno}}</td><td><a href="{% url 'empupdateurl' emp.empno %}">{{emp.empname}}</a></td><td>{{emp.salary}}</td><td><a href="{% url 'empdeleteurl' emp.empno %}">Delete</a></td></tr>
+    <tr><td>{{emp.empno}}</td><td><a href="{% url 'empupdateurl' emp.empno %}">{{emp.empname}}</a></td><td>{{emp.salary}}</td><td>{{emp.department.deptname}}</td><td>{{emp.department.location}}</td><td><a href="{% url 'empdeleteurl' emp.empno %}">Delete</a></td></tr>
     {% endfor %}
     </table>
 {% endblock %}

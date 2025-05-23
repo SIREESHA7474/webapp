@@ -16,7 +16,17 @@
         <input type="text" name="esal">
     </label><br><br>
    
-        <input type="submit" name="insert">
+        
+    <label for="">
+        Employee Department
+        <select name="dept" id="">
+            {% for dobj in depts %}
+                 <option value ="{{dobj.deptno}}">{{dobj.deptname}}</option>
+            {% endfor %}
+        </select>
+    </label><br><br>
+   
+        <input type="submit" value="insert">
 </form>
 <p>{{msg}}</p>
 {% endblock %}

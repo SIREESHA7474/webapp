@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "firstapp","secondapp","thirdapp",
-    "calcuapp","DBapp",
+    "calcuapp","DBapp","DBApp1",
 
 ]
 

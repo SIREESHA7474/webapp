@@ -25,6 +25,10 @@ urlpatterns = [
     path("third/",include("thirdapp.urls")),
     path("calcapp/",include("calcuapp.urls")),
     path("db/",include("DBapp.urls")),
+    path("DB/",include("DBApp1.urls")),
+  
+    
+
     
     
     

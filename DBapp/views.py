@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django .http  import HttpResponse
-from .models import Employee
+from .models import Employee, Department
 # Create your views here.
 
 
@@ -10,18 +10,21 @@ def dbprocessing(request):
 
 def insertemployee(request):
     if request.method == 'GET':
-        return render(request,'dbapp.html/insert.html')  
+         depts = Department.objects.all()
+         return render(request,'dbapp.html/insert.html',{'depts':depts})  
     
     if request.method =="POST":
          eno = request.POST.get("eno",0)
          ename = request.POST.get('ename','VCUBE')
          esal = request.POST.get("esal",0)
+         edeptno = int(request.POST.get('dept',1))
 
          #insert into employee values(eno,ename,esal)
          #empobj=Employee(empno=eno,empname=ename,salary=esal)
          #empobj.save()
+    dobj = Department.objects.get(deptno = edeptno)     
     try:
-         Employee.objects.create(empno=eno,empname=ename,salary=esal)
+         Employee.objects.create(empno=eno,empname=ename,salary=esal,department = dobj)
     except Exception:
          return render(request,"dbapp.html/insert.html",{"msg":"data is failed"})
     return redirect("empselecturl")

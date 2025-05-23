@@ -11,6 +11,14 @@
         Employee salary
         <input type="text" name="esal" value="{{employee.salary}}">
     </label><br><br>
+    <label for="">
+        Department name
+        <select name="dept" id="">
+            {% for dobj in depts %}
+                 <option value ="{{dobj.deptno}}">{{emp.department.deptname}}</option>
+            {% endfor %}
+        </select>
+    </label><br><br>
     <input type="submit" value="update">
 </form>    
 {% endblock %}
